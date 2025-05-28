@@ -75,7 +75,7 @@ fn benchmark_cg(c: &mut Criterion) {
     let ref_bb : Ref<QFI> = unsafe {Ref::from_raw_ref(&bb)};
     let mut result_qfi = unsafe{QFI::new_0a()};
     let mutref_result: MutRef<QFI> = unsafe {MutRef::from_raw_ref(&mut result_qfi)};
-    group.bench_with_input(BenchmarkId::new("Addition in Unknown Order Group", "(G1.G2)".to_string()), &cl, |b, _cfg| {
+    group.bench_with_input(BenchmarkId::new("Multiplication in Unknown Order Group", "(G1.G2)".to_string()), &cl, |b, _cfg| {
         b.iter(|| {
             unsafe{ cl.cl_delta().nucomp(mutref_result, ref_aa, ref_bb)};
             black_box(&mutref_result);
