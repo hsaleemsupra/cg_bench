@@ -1,0 +1,14 @@
+[package]
+name = "cg_bench"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bicycl = {path = "supra-bicycl" }
+criterion = "0.6.0"
+miracl_core_bls12381 = "4.2.2"
+cpp_std = "0.1.1"
+
+[[bench]]
+name = "benchmarks_cg"
+harness = false
